@@ -11,7 +11,6 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Utility methods for working with {@link Location}.
@@ -30,7 +29,6 @@ public class UtilLoc {
     return sb.toString();
   }
 
-  @Nullable
   public static Location locFromString(final String locationString) {
     if (locationString.contains(";")) {
       final Location location = importOldFormat(locationString);
