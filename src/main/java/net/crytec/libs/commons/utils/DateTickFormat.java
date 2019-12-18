@@ -60,19 +60,19 @@ public final class DateTickFormat {
     // Detect ticks format
     try {
       return parseTicks(desc);
-    } catch (final NumberFormatException e) {
+    } catch (final NumberFormatException ignored) {
     }
 
     // Detect 24-hour format
     try {
       return parse24(desc);
-    } catch (final NumberFormatException e) {
+    } catch (final NumberFormatException ignored) {
     }
 
     // Detect aliases
     try {
       return parseAlias(desc);
-    } catch (final NumberFormatException e) {
+    } catch (final NumberFormatException ignored) {
     }
 
     // Well we failed to understand...

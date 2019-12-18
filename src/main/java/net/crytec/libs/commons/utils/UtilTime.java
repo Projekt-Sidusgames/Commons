@@ -27,16 +27,16 @@ public class UtilTime {
 
     final StringBuilder builder = new StringBuilder();
     if (d.toDays() > 0) {
-      builder.append(d.toDays() + ((d.toDays() > 1) ? " Tage " : " Tag "));
+      builder.append(d.toDays()).append((d.toDays() > 1) ? " Tage " : " Tag ");
     }
     if (d.toHours() % 24 > 0) {
-      builder.append(d.toHours() % 24 + ((d.toHours() % 24 > 1) ? " Stunden " : " Stunde "));
+      builder.append(d.toHours() % 24).append((d.toHours() % 24 > 1) ? " Stunden " : " Stunde ");
     }
     if (d.toMinutes() % 60 > 0) {
-      builder.append(d.toMinutes() % 60 + ((d.toMinutes() % 60 > 1) ? " Minuten " : " Minute "));
+      builder.append(d.toMinutes() % 60).append((d.toMinutes() % 60 > 1) ? " Minuten " : " Minute ");
     }
     if (d.getSeconds() % 60 > 0) {
-      builder.append(d.getSeconds() % 60 + ((d.getSeconds() % 60 > 1) ? " Sekunden" : " Sekunde"));
+      builder.append(d.getSeconds() % 60).append((d.getSeconds() % 60 > 1) ? " Sekunden" : " Sekunde");
     }
     return builder.toString();
   }
@@ -47,16 +47,16 @@ public class UtilTime {
 
     final StringBuilder builder = new StringBuilder();
     if (d.toDays() > 0) {
-      builder.append(d.toDays() + ((d.toDays() > 1) ? " Tage " : " Tag "));
+      builder.append(d.toDays()).append((d.toDays() > 1) ? " Tage " : " Tag ");
     }
     if (d.toHours() % 24 > 0) {
-      builder.append(d.toHours() % 24 + ((d.toHours() % 24 > 1) ? " Stunden " : " Stunde "));
+      builder.append(d.toHours() % 24).append((d.toHours() % 24 > 1) ? " Stunden " : " Stunde ");
     }
     if (d.toMinutes() % 60 > 0) {
-      builder.append(d.toMinutes() % 60 + ((d.toMinutes() % 60 > 1) ? " Minuten " : " Minute "));
+      builder.append(d.toMinutes() % 60).append((d.toMinutes() % 60 > 1) ? " Minuten " : " Minute ");
     }
     if (d.getSeconds() % 60 > 0) {
-      builder.append(d.getSeconds() % 60 + ((d.getSeconds() % 60 > 1) ? " Sekunden" : " Sekunde"));
+      builder.append(d.getSeconds() % 60).append((d.getSeconds() % 60 > 1) ? " Sekunden" : " Sekunde");
     }
     return builder.toString();
   }
@@ -82,16 +82,16 @@ public class UtilTime {
 
     final StringBuilder builder = new StringBuilder();
     if (d.toDays() > 0) {
-      builder.append(d.toDays() + ((d.toDays() > 1) ? " Tage " : " Tag "));
+      builder.append(d.toDays()).append((d.toDays() > 1) ? " Tage " : " Tag ");
     }
     if (d.toHours() % 24 > 0) {
-      builder.append(d.toHours() % 24 + ((d.toHours() % 24 > 1) ? " Stunden " : " Stunde "));
+      builder.append(d.toHours() % 24).append((d.toHours() % 24 > 1) ? " Stunden " : " Stunde ");
     }
     if (d.toMinutes() % 60 > 0) {
-      builder.append(d.toMinutes() % 60 + ((d.toMinutes() % 60 > 1) ? " Minuten " : " Minute "));
+      builder.append(d.toMinutes() % 60).append((d.toMinutes() % 60 > 1) ? " Minuten " : " Minute ");
     }
     if (d.getSeconds() % 60 > 0) {
-      builder.append(d.getSeconds() % 60 + ((d.getSeconds() % 60 > 1) ? " Sekunden" : " Sekunde"));
+      builder.append(d.getSeconds() % 60).append((d.getSeconds() % 60 > 1) ? " Sekunden" : " Sekunde");
     }
     return builder.toString();
   }

@@ -54,19 +54,19 @@ public class UtilMath {
     }
   }
 
-  public static final float sin(final float radians) {
+  public static float sin(final float radians) {
     return Sin.table[((int) (radians * 2607.5945F) & 0x3FFF)];
   }
 
-  public static final float cos(final float radians) {
+  public static float cos(final float radians) {
     return Sin.table[((int) ((radians + 1.570796F) * 2607.5945F) & 0x3FFF)];
   }
 
-  public static final float sinDeg(final float degrees) {
+  public static float sinDeg(final float degrees) {
     return Sin.table[((int) (degrees * 45.511112F) & 0x3FFF)];
   }
 
-  public static final float cosDeg(final float degrees) {
+  public static float cosDeg(final float degrees) {
     return Sin.table[((int) ((degrees + 90.0F) * 45.511112F) & 0x3FFF)];
   }
 
@@ -88,7 +88,7 @@ public class UtilMath {
     }
   }
 
-  public static final float atan2(float y, float x) {
+  public static float atan2(float y, float x) {
     final float add;
     final float mul;
     if (x < 0.0F) {
@@ -109,7 +109,7 @@ public class UtilMath {
       }
       add = 0.0F;
     }
-    final float invDiv = 1.0F / ((x < y ? y : x) * INV_ATAN2_DIM_MINUS_1);
+    final float invDiv = 1.0F / ((Math.max(x, y)) * INV_ATAN2_DIM_MINUS_1);
     if (invDiv == (1.0F / 1.0F)) {
       return ((float) Math.atan2(y, x) + add) * mul;
     }
@@ -118,31 +118,31 @@ public class UtilMath {
     return (Atan2.table[(yi * ATAN2_DIM + xi)] + add) * mul;
   }
 
-  public static final int random(final int range) {
+  public static int random(final int range) {
     return random.nextInt(range + 1);
   }
 
-  public static final int random(final int start, final int end) {
+  public static int random(final int start, final int end) {
     return start + random.nextInt(end - start + 1);
   }
 
-  public static final boolean randomBoolean() {
+  public static boolean randomBoolean() {
     return random.nextBoolean();
   }
 
-  public static final boolean randomBoolean(final float chance) {
+  public static boolean randomBoolean(final float chance) {
     return random() < chance;
   }
 
-  public static final float random() {
+  public static float random() {
     return random.nextFloat();
   }
 
-  public static final float random(final float range) {
+  public static float random(final float range) {
     return random.nextFloat() * range;
   }
 
-  public static final float random(final float start, final float end) {
+  public static float random(final float start, final float end) {
     return start + random.nextFloat() * (end - start);
   }
 
@@ -239,15 +239,15 @@ public class UtilMath {
   }
 
   public static double trim(final int degree, final double d) {
-    String format = "#.#";
+    final StringBuilder format = new StringBuilder("#.#");
 
     for (int i = 1; i < degree; i++) {
-      format = format + "#";
+      format.append("#");
     }
     final DecimalFormatSymbols dfs = DecimalFormatSymbols.getInstance();
     dfs.setDecimalSeparator('.');
-    final DecimalFormat twoDForm = new DecimalFormat(format, dfs);
-    return Double.valueOf(twoDForm.format(d)).doubleValue();
+    final DecimalFormat twoDForm = new DecimalFormat(format.toString(), dfs);
+    return Double.parseDouble(twoDForm.format(d));
   }
 
   public static int r(final int i) {
@@ -337,8 +337,7 @@ public class UtilMath {
 
   public static int randomRange(final int n, final int n2) {
     final Random random = new Random();
-    final int n3 = random.nextInt(n2 - n + 1) + n;
-    return n3;
+    return random.nextInt(n2 - n + 1) + n;
   }
 
   public static int randomInt(final Range<Integer> range) {
@@ -352,11 +351,10 @@ public class UtilMath {
 
   public static int getRandomWithExclusion(final int n, final int n2, final int... arrn) {
     int n3 = n + random.nextInt(n2 - n + 1 - arrn.length);
-    final int[] arrn2 = arrn;
-    final int n4 = arrn2.length;
+    final int n4 = arrn.length;
     int n5 = 0;
     while (n5 < n4) {
-      final int n6 = arrn2[n5];
+      final int n6 = arrn[n5];
       if (n3 < n6) {
         break;
       }
@@ -393,10 +391,7 @@ public class UtilMath {
 
   public static boolean isInCooldown(final long lastUse, final int cooldownInSec) {
     final long secondsLeft = ((lastUse / 1000) + cooldownInSec) - (System.currentTimeMillis() / 1000);
-    if (secondsLeft > 0) {
-      return true;
-    }
-    return false;
+    return secondsLeft > 0;
   }
 
   public static int getRandom(final int lower, final int upper) {
@@ -408,9 +403,6 @@ public class UtilMath {
   }
 
   public static boolean isDivisible(final int by, final int i) {
-    if (i % by == 0) {
-      return true;
-    }
-    return false;
+    return i % by == 0;
   }
 }

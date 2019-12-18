@@ -18,7 +18,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.io.BukkitObjectInputStream;
 import org.bukkit.util.io.BukkitObjectOutputStream;
-import org.jetbrains.annotations.Nullable;
 import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 
 /**
@@ -135,7 +134,7 @@ public class UtilInv {
   public static boolean has(final Inventory inv, final ItemStack item, final int amount) {
     final int fullAmount = amount * item.getAmount();
 
-    return fullAmount <= IntStream.range(0, 36).mapToObj(i -> inv.getItem(i)).filter(i -> i != null && i.isSimilar(item)).mapToInt(i -> i.getAmount()).sum();
+    return fullAmount <= IntStream.range(0, 36).mapToObj(inv::getItem).filter(i -> i != null && i.isSimilar(item)).mapToInt(ItemStack::getAmount).sum();
   }
 
 
@@ -266,9 +265,9 @@ public class UtilInv {
     final int fullAmount = amount * item.getAmount();
 
     return fullAmount <= IntStream.range(0, inventory.getSize())
-        .mapToObj(i -> inventory.getItem(i))
+        .mapToObj(inventory::getItem)
         .filter(i -> i != null && i.isSimilar(item))
-        .mapToInt(i -> i.getAmount())
+        .mapToInt(ItemStack::getAmount)
         .sum();
 
   }
@@ -336,7 +335,7 @@ public class UtilInv {
    * @param item an item stack
    * @return {@code true} if it is "null". Otherwise is {@code false}.
    */
-  public static boolean isNull(@Nullable final ItemStack item) {
+  public static boolean isNull(final ItemStack item) {
     return item == null || item.getType() == Material.AIR || item.getType().toString().endsWith("_AIR");
   }
 
@@ -346,7 +345,7 @@ public class UtilInv {
    * @param material material
    * @return {@code true} if it is "null". Otherwise is {@code false}.
    */
-  public static boolean isNull(@Nullable final Material material) {
+  public static boolean isNull(final Material material) {
     return material == null || material == Material.AIR || material.toString().endsWith("_AIR");
   }
 
@@ -357,7 +356,7 @@ public class UtilInv {
    * @param b the second item stack
    * @return {@code true} if they are equal. Otherwise is {@code false}.
    */
-  public static boolean compare(@Nullable final ItemStack a, @Nullable final ItemStack b) {
+  public static boolean compare(final ItemStack a, final ItemStack b) {
     if (isNull(a)) {
       return isNull(b);
     } else if (isNull(b)) {
@@ -373,7 +372,7 @@ public class UtilInv {
    * @param b the second array
    * @return {@code true} if they are equal. Otherwise is {@code false}.
    */
-  public static boolean compare(@Nullable final ItemStack[] a, @Nullable final ItemStack[] b) {
+  public static boolean compare(final ItemStack[] a, final ItemStack[] b) {
     if (a == null && b == null) {
       return true;
     }

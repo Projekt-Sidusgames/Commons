@@ -34,6 +34,6 @@ public class UtilEntity {
    */
   public static SpawnReason getSpawnReason(final Entity entity) {
     final Optional<String> reason = entity.getScoreboardTags().stream().filter(tag -> tag.startsWith("ct:corespawnreason;")).findFirst();
-    return reason.isPresent() ? SpawnReason.valueOf(reason.get().replace("ctcore:spawnreason;", "")) : SpawnReason.CUSTOM;
+    return reason.map(s -> SpawnReason.valueOf(s.replace("ctcore:spawnreason;", ""))).orElse(SpawnReason.CUSTOM);
   }
 }

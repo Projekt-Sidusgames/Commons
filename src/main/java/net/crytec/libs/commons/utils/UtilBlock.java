@@ -45,7 +45,7 @@ public class UtilBlock {
             final double offset = UtilMath.offset(loc, curBlock.getLocation().add(0.5D, 0.5D, 0.5D));
 
             if (offset <= dR) {
-              blockList.put(curBlock, Double.valueOf(1.0D - offset / dR));
+              blockList.put(curBlock, 1.0D - offset / dR);
             }
           }
         }
@@ -73,7 +73,7 @@ public class UtilBlock {
           final double offset = UtilMath.offset(block.getLocation(), curBlock.getLocation());
 
           if (offset <= dR) {
-            blockList.put(curBlock, Double.valueOf(1.0D - offset / dR));
+            blockList.put(curBlock, 1.0D - offset / dR);
           }
         }
       }
