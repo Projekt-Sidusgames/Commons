@@ -3,7 +3,7 @@ package net.crytec.libs.commons.utils.item;
 import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.UUID;
-import org.apache.commons.lang3.Validate;
+import net.crytec.libs.commons.utils.lang.Validate;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.attribute.Attribute;

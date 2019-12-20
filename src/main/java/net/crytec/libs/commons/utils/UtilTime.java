@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import org.apache.commons.lang3.time.DurationFormatUtils;
+import net.crytec.libs.commons.utils.lang.time.DurationFormatUtils;
 
 public class UtilTime {
 

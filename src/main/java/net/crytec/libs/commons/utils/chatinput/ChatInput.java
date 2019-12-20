@@ -10,13 +10,19 @@ public class ChatInput {
   private final Consumer<String> input;
 
   public ChatInput(final Player player, final String text, final Consumer<String> input) {
+    this(player, text, true, input);
+  }
+
+  public ChatInput(final Player player, final String text, final boolean withPluginPrefix, final Consumer<String> input) {
     this.input = input;
     player.closeInventory();
 
     final ConversationFactory factory = new ConversationFactory(CommonsAPI.getHost());
     factory.withFirstPrompt(new PlayerResponsePrompt(this, text));
     factory.withLocalEcho(false);
-    factory.withPrefix(conversationContext -> CommonsAPI.getHost().getName());
+    if (withPluginPrefix) {
+      factory.withPrefix(conversationContext -> CommonsAPI.getHost().getName());
+    }
     player.beginConversation(factory.buildConversation(player));
   }
 

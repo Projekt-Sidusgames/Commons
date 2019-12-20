@@ -1,7 +1,7 @@
 package net.crytec.libs.commons.utils;
 
 import java.util.Optional;
-import org.apache.commons.lang3.EnumUtils;
+import net.crytec.libs.commons.utils.lang.EnumUtils;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
