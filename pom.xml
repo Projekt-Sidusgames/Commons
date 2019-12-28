@@ -66,8 +66,6 @@
           </execution>
         </executions>
         <configuration>
-          <serverId>nexus-releases</serverId>
-          <nexusUrl>http://repo.avarioncraft.de/</nexusUrl>
           <skipStaging>true</skipStaging>
         </configuration>
       </plugin>
