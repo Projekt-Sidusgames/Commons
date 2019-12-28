@@ -6,14 +6,7 @@
 
   <groupId>net.crytec.libs</groupId>
   <artifactId>commons</artifactId>
-  <packaging>pom</packaging>
-  <version>1.3.1-SNAPSHOT</version>
-
-
-  <modules>
-    <module>language</module>
-    <module>spigothelper</module>
-  </modules>
+  <version>1.3.0-SNAPSHOT</version>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -73,6 +66,8 @@
           </execution>
         </executions>
         <configuration>
+          <serverId>nexus-releases</serverId>
+          <nexusUrl>http://repo.avarioncraft.de/</nexusUrl>
           <skipStaging>true</skipStaging>
         </configuration>
       </plugin>
