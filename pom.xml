@@ -6,7 +6,7 @@
 
   <groupId>net.crytec.libs</groupId>
   <artifactId>commons</artifactId>
-  <version>1.3.0</version>
+  <version>1.3.0-SNAPSHOT</version>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,6 +21,10 @@
   </repositories>
 
   <distributionManagement>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>http://repo.avarioncraft.de/repository/maven-snapshots/</url>
+    </snapshotRepository>
     <repository>
       <id>nexus-releases</id>
       <url>http://repo.avarioncraft.de/repository/maven-releases/</url>
@@ -51,7 +55,7 @@
       <plugin>
         <groupId>org.sonatype.plugins</groupId>
         <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.7</version>
+        <version>1.6.8</version>
         <executions>
           <execution>
             <id>default-deploy</id>
