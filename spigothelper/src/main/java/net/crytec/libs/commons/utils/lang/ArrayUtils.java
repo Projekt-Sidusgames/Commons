@@ -8012,8 +8012,8 @@ public class ArrayUtils {
   //-----------------------------------------------------------------------
 
   /**
-   * <p>Converts the given array into a {@link java.util.Map}. Each element of the array
-   * must be either a {@link java.util.Map.Entry} or an Array, containing at least two elements, where the first element is used as key and the second as value.
+   * <p>Converts the given array into a {@link Map}. Each element of the array
+   * must be either a {@link Map.Entry} or an Array, containing at least two elements, where the first element is used as key and the second as value.
    *
    * <p>This method can be used to initialize:
    * <pre>
@@ -8026,10 +8026,10 @@ public class ArrayUtils {
    *
    * <p>This method returns {@code null} for a {@code null} input array.
    *
-   * @param array an array whose elements are either a {@link java.util.Map.Entry} or an Array containing at least two elements, may be {@code null}
+   * @param array an array whose elements are either a {@link Map.Entry} or an Array containing at least two elements, may be {@code null}
    * @return a {@code Map} that was created from the array
    * @throws IllegalArgumentException if one element of this Array is itself an Array containing less then two elements
-   * @throws IllegalArgumentException if the array contains elements other than {@link java.util.Map.Entry} and an Array
+   * @throws IllegalArgumentException if the array contains elements other than {@link Map.Entry} and an Array
    */
   public static Map<Object, Object> toMap(final Object[] array) {
     if (array == null) {

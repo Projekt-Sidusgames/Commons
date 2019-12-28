@@ -72,7 +72,7 @@ public class FastDateParser implements DateParser, Serializable {
   /**
    * Required for serialization support.
    *
-   * @see java.io.Serializable
+   * @see Serializable
    */
   private static final long serialVersionUID = 3L;
 
@@ -133,19 +133,19 @@ public class FastDateParser implements DateParser, Serializable {
       definingCalendar.setTime(new Date());
       centuryStartYear = definingCalendar.get(Calendar.YEAR) - 80;
     }
-      century = centuryStartYear / 100 * 100;
-      startYear = centuryStartYear - century;
+    century = centuryStartYear / 100 * 100;
+    startYear = centuryStartYear - century;
 
-      init(definingCalendar);
+    init(definingCalendar);
   }
 
   /**
    * Initialize derived fields from defining fields. This is called from constructor and from readObject (de-serialization)
    *
-   * @param definingCalendar the {@link java.util.Calendar} instance used to initialize this FastDateParser
+   * @param definingCalendar the {@link Calendar} instance used to initialize this FastDateParser
    */
   private void init(final Calendar definingCalendar) {
-      patterns = new ArrayList<>();
+    patterns = new ArrayList<>();
 
     final StrategyParser fm = new StrategyParser(definingCalendar);
     for (; ; ) {
@@ -153,7 +153,7 @@ public class FastDateParser implements DateParser, Serializable {
       if (field == null) {
         break;
       }
-        patterns.add(field);
+      patterns.add(field);
     }
   }
 
@@ -328,7 +328,7 @@ public class FastDateParser implements DateParser, Serializable {
     in.defaultReadObject();
 
     final Calendar definingCalendar = Calendar.getInstance(timeZone, locale);
-      init(definingCalendar);
+    init(definingCalendar);
   }
 
   /* (non-Javadoc)
@@ -373,7 +373,7 @@ public class FastDateParser implements DateParser, Serializable {
    * To determine if the parse has succeeded, the caller must check if the current parse position given by {@link ParsePosition#getIndex()} has been updated. If the input buffer has been fully parsed, then the index will point to just after the end
    * of the input buffer.
    *
-   * @see org.apache.commons.lang3.time.DateParser#parse(java.lang.String, java.text.ParsePosition)
+   * @see org.apache.commons.lang3.time.DateParser#parse(String, ParsePosition)
    */
   @Override
   public Date parse(final String source, final ParsePosition pos) {
@@ -500,11 +500,11 @@ public class FastDateParser implements DateParser, Serializable {
     private Pattern pattern;
 
     void createPattern(final StringBuilder regex) {
-        createPattern(regex.toString());
+      createPattern(regex.toString());
     }
 
     void createPattern(final String regex) {
-        pattern = Pattern.compile(regex);
+      pattern = Pattern.compile(regex);
     }
 
     /**
@@ -525,7 +525,7 @@ public class FastDateParser implements DateParser, Serializable {
         return false;
       }
       pos.setIndex(pos.getIndex() + matcher.end(1));
-        setCalendar(parser, calendar, matcher.group(1));
+      setCalendar(parser, calendar, matcher.group(1));
       return true;
     }
 
@@ -696,10 +696,10 @@ public class FastDateParser implements DateParser, Serializable {
 
       final StringBuilder regex = new StringBuilder();
       regex.append("((?iu)");
-        lKeyValues = appendDisplayNames(definingCalendar, locale, field, regex);
+      lKeyValues = appendDisplayNames(definingCalendar, locale, field, regex);
       regex.setLength(regex.length() - 1);
       regex.append(")");
-        createPattern(regex);
+      createPattern(regex);
     }
 
     /**
@@ -822,8 +822,8 @@ public class FastDateParser implements DateParser, Serializable {
       int dstOffset;
 
       TzInfo(final TimeZone tz, final boolean useDst) {
-          zone = tz;
-          dstOffset = useDst ? tz.getDSTSavings() : 0;
+        zone = tz;
+        dstOffset = useDst ? tz.getDSTSavings() : 0;
       }
     }
 
@@ -874,7 +874,7 @@ public class FastDateParser implements DateParser, Serializable {
             // ignore the data associated with duplicates supplied in
             // the additional names
             if (sorted.add(key)) {
-                tzNames.put(key, tzInfo);
+              tzNames.put(key, tzInfo);
             }
           }
         }
@@ -885,7 +885,7 @@ public class FastDateParser implements DateParser, Serializable {
         simpleQuote(sb.append('|'), zoneName);
       }
       sb.append(")");
-        createPattern(sb);
+      createPattern(sb);
     }
 
     /**
@@ -918,7 +918,7 @@ public class FastDateParser implements DateParser, Serializable {
      * @param pattern The Pattern
      */
     ISO8601TimeZoneStrategy(final String pattern) {
-        createPattern(pattern);
+      createPattern(pattern);
     }
 
     /**
