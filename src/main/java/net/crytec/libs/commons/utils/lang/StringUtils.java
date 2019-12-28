@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 import java.util.regex.Pattern;
 
 /**
- * <p>Operations on {@link String} that are
+ * <p>Operations on {@link java.lang.String} that are
  * {@code null} safe.</p>
  *
  * <ul>
@@ -96,7 +96,7 @@ import java.util.regex.Pattern;
  *
  * <p>#ThreadSafe#</p>
  *
- * @see String
+ * @see java.lang.String
  * @since 1.0
  */
 //@Immutable
@@ -1599,7 +1599,7 @@ public class StringUtils {
    * @param str    the CharSequence to check, may be null
    * @param suffix the suffix to find, may be null
    * @return {@code true} if the CharSequence ends with the suffix, case sensitive, or both {@code null}
-   * @see String#endsWith(String)
+   * @see java.lang.String#endsWith(String)
    * @since 2.4
    * @since 3.0 Changed signature from endsWith(String, String) to endsWith(CharSequence, CharSequence)
    */
@@ -1614,7 +1614,7 @@ public class StringUtils {
    * @param suffix     the suffix to find, may be null
    * @param ignoreCase indicates whether the compare should ignore case (case insensitive) or not.
    * @return {@code true} if the CharSequence starts with the prefix or both {@code null}
-   * @see String#endsWith(String)
+   * @see java.lang.String#endsWith(String)
    */
   private static boolean endsWith(final CharSequence str, final CharSequence suffix, final boolean ignoreCase) {
     if (str == null || suffix == null) {
@@ -1677,7 +1677,7 @@ public class StringUtils {
    * @param str    the CharSequence to check, may be null
    * @param suffix the suffix to find, may be null
    * @return {@code true} if the CharSequence ends with the suffix, case insensitive, or both {@code null}
-   * @see String#endsWith(String)
+   * @see java.lang.String#endsWith(String)
    * @since 2.4
    * @since 3.0 Changed signature from endsWithIgnoreCase(String, String) to endsWithIgnoreCase(CharSequence, CharSequence)
    */
@@ -4630,7 +4630,7 @@ public class StringUtils {
    * @param separator the separator character to use, null treated as ""
    * @param objects   the varargs providing the values to join together. {@code null} elements are treated as ""
    * @return the joined String.
-   * @throws IllegalArgumentException if a null varargs is provided
+   * @throws java.lang.IllegalArgumentException if a null varargs is provided
    * @since 3.5
    */
   public static String joinWith(final String separator, final Object... objects) {
@@ -5659,8 +5659,8 @@ public class StringUtils {
    * @see #replaceAll(String, String, String)
    * @see #removePattern(String, String)
    * @see String#replaceAll(String, String)
-   * @see Pattern
-   * @see Pattern#DOTALL
+   * @see java.util.regex.Pattern
+   * @see java.util.regex.Pattern#DOTALL
    * @since 3.5
    * @deprecated Moved to RegExUtils.
    */
@@ -5769,8 +5769,8 @@ public class StringUtils {
    * @throws java.util.regex.PatternSyntaxException if the regular expression's syntax is invalid
    * @see #replaceFirst(String, String, String)
    * @see String#replaceFirst(String, String)
-   * @see Pattern
-   * @see Pattern#DOTALL
+   * @see java.util.regex.Pattern
+   * @see java.util.regex.Pattern#DOTALL
    * @since 3.5
    * @deprecated Moved to RegExUtils.
    */
@@ -6189,8 +6189,8 @@ public class StringUtils {
    * @throws java.util.regex.PatternSyntaxException if the regular expression's syntax is invalid
    * @see #replacePattern(String, String, String)
    * @see String#replaceAll(String, String)
-   * @see Pattern
-   * @see Pattern#DOTALL
+   * @see java.util.regex.Pattern
+   * @see java.util.regex.Pattern#DOTALL
    * @since 3.5
    * @deprecated Moved to RegExUtils.
    */
@@ -6562,8 +6562,8 @@ public class StringUtils {
    * @return the text with the first replacement processed, {@code null} if null String input
    * @throws java.util.regex.PatternSyntaxException if the regular expression's syntax is invalid
    * @see String#replaceFirst(String, String)
-   * @see Pattern
-   * @see Pattern#DOTALL
+   * @see java.util.regex.Pattern
+   * @see java.util.regex.Pattern#DOTALL
    * @since 3.5
    * @deprecated Moved to RegExUtils.
    */
@@ -7639,7 +7639,7 @@ public class StringUtils {
    * @param str    the CharSequence to check, may be null
    * @param prefix the prefix to find, may be null
    * @return {@code true} if the CharSequence starts with the prefix, case sensitive, or both {@code null}
-   * @see String#startsWith(String)
+   * @see java.lang.String#startsWith(String)
    * @since 2.4
    * @since 3.0 Changed signature from startsWith(String, String) to startsWith(CharSequence, CharSequence)
    */
@@ -7654,7 +7654,7 @@ public class StringUtils {
    * @param prefix     the prefix to find, may be null
    * @param ignoreCase indicates whether the compare should ignore case (case insensitive) or not.
    * @return {@code true} if the CharSequence starts with the prefix or both {@code null}
-   * @see String#startsWith(String)
+   * @see java.lang.String#startsWith(String)
    */
   private static boolean startsWith(final CharSequence str, final CharSequence prefix, final boolean ignoreCase) {
     if (str == null || prefix == null) {
@@ -7716,7 +7716,7 @@ public class StringUtils {
    * @param str    the CharSequence to check, may be null
    * @param prefix the prefix to find, may be null
    * @return {@code true} if the CharSequence starts with the prefix, case insensitive, or both {@code null}
-   * @see String#startsWith(String)
+   * @see java.lang.String#startsWith(String)
    * @since 2.4
    * @since 3.0 Changed signature from startsWithIgnoreCase(String, String) to startsWithIgnoreCase(CharSequence, CharSequence)
    */

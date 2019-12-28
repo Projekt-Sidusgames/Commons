@@ -818,7 +818,7 @@ public class NumberUtils {
   }
 
   /**
-   * <p>Utility method for {@link #createNumber(String)}.</p>
+   * <p>Utility method for {@link #createNumber(java.lang.String)}.</p>
    *
    * <p>Returns mantissa of the given number.</p>
    *
@@ -830,7 +830,7 @@ public class NumberUtils {
   }
 
   /**
-   * <p>Utility method for {@link #createNumber(String)}.</p>
+   * <p>Utility method for {@link #createNumber(java.lang.String)}.</p>
    *
    * <p>Returns mantissa of the given number.</p>
    *
@@ -846,7 +846,7 @@ public class NumberUtils {
   }
 
   /**
-   * <p>Utility method for {@link #createNumber(String)}.</p>
+   * <p>Utility method for {@link #createNumber(java.lang.String)}.</p>
    *
    * <p>Returns {@code true} if s is {@code null}.</p>
    *

@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
 /**
  * <p>Helpers to process Strings using regular expressions.</p>
  *
- * @see Pattern
+ * @see java.util.regex.Pattern
  * @since 3.8
  */
 public class RegExUtils {
@@ -54,7 +54,7 @@ public class RegExUtils {
    * @return the text with any removes processed, {@code null} if null String input
    * @see #replaceAll(String, Pattern, String)
    * @see java.util.regex.Matcher#replaceAll(String)
-   * @see Pattern
+   * @see java.util.regex.Pattern
    */
   public static String removeAll(final String text, final Pattern regex) {
     return replaceAll(text, regex, StringUtils.EMPTY);
@@ -95,8 +95,8 @@ public class RegExUtils {
    * @see #replaceAll(String, String, String)
    * @see #removePattern(String, String)
    * @see String#replaceAll(String, String)
-   * @see Pattern
-   * @see Pattern#DOTALL
+   * @see java.util.regex.Pattern
+   * @see java.util.regex.Pattern#DOTALL
    */
   public static String removeAll(final String text, final String regex) {
     return replaceAll(text, regex, StringUtils.EMPTY);
@@ -130,7 +130,7 @@ public class RegExUtils {
    * @return the text with the first replacement processed, {@code null} if null String input
    * @see #replaceFirst(String, Pattern, String)
    * @see java.util.regex.Matcher#replaceFirst(String)
-   * @see Pattern
+   * @see java.util.regex.Pattern
    */
   public static String removeFirst(final String text, final Pattern regex) {
     return replaceFirst(text, regex, StringUtils.EMPTY);
@@ -170,8 +170,8 @@ public class RegExUtils {
    * @throws java.util.regex.PatternSyntaxException if the regular expression's syntax is invalid
    * @see #replaceFirst(String, String, String)
    * @see String#replaceFirst(String, String)
-   * @see Pattern
-   * @see Pattern#DOTALL
+   * @see java.util.regex.Pattern
+   * @see java.util.regex.Pattern#DOTALL
    */
   public static String removeFirst(final String text, final String regex) {
     return replaceFirst(text, regex, StringUtils.EMPTY);
@@ -238,7 +238,7 @@ public class RegExUtils {
    * @param replacement the string to be substituted for each match
    * @return the text with any replacements processed, {@code null} if null String input
    * @see java.util.regex.Matcher#replaceAll(String)
-   * @see Pattern
+   * @see java.util.regex.Pattern
    */
   public static String replaceAll(final String text, final Pattern regex, final String replacement) {
     if (text == null || regex == null || replacement == null) {
@@ -287,8 +287,8 @@ public class RegExUtils {
    * @throws java.util.regex.PatternSyntaxException if the regular expression's syntax is invalid
    * @see #replacePattern(String, String, String)
    * @see String#replaceAll(String, String)
-   * @see Pattern
-   * @see Pattern#DOTALL
+   * @see java.util.regex.Pattern
+   * @see java.util.regex.Pattern#DOTALL
    */
   public static String replaceAll(final String text, final String regex, final String replacement) {
     if (text == null || regex == null || replacement == null) {
@@ -329,7 +329,7 @@ public class RegExUtils {
    * @param replacement the string to be substituted for the first match
    * @return the text with the first replacement processed, {@code null} if null String input
    * @see java.util.regex.Matcher#replaceFirst(String)
-   * @see Pattern
+   * @see java.util.regex.Pattern
    */
   public static String replaceFirst(final String text, final Pattern regex, final String replacement) {
     if (text == null || regex == null || replacement == null) {
@@ -376,8 +376,8 @@ public class RegExUtils {
    * @return the text with the first replacement processed, {@code null} if null String input
    * @throws java.util.regex.PatternSyntaxException if the regular expression's syntax is invalid
    * @see String#replaceFirst(String, String)
-   * @see Pattern
-   * @see Pattern#DOTALL
+   * @see java.util.regex.Pattern
+   * @see java.util.regex.Pattern#DOTALL
    */
   public static String replaceFirst(final String text, final String regex, final String replacement) {
     if (text == null || regex == null || replacement == null) {

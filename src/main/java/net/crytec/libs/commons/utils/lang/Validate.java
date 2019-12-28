@@ -41,7 +41,7 @@ import java.util.regex.Pattern;
  *
  * <p>#ThreadSafe#</p>
  *
- * @see String#format(String, Object...)
+ * @see java.lang.String#format(String, Object...)
  * @since 2.0
  */
 public class Validate {
@@ -849,7 +849,7 @@ public class Validate {
    *
    * @param value the value to validate
    * @throws IllegalArgumentException if the value is not a number
-   * @see #notNaN(double, String, Object...)
+   * @see #notNaN(double, java.lang.String, java.lang.Object...)
    * @since 3.5
    */
   public static void notNaN(final double value) {
@@ -888,7 +888,7 @@ public class Validate {
    *
    * @param value the value to validate
    * @throws IllegalArgumentException if the value is infinite or {@code NaN}
-   * @see #finite(double, String, Object...)
+   * @see #finite(double, java.lang.String, java.lang.Object...)
    * @since 3.5
    */
   public static void finite(final double value) {

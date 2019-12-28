@@ -29,7 +29,7 @@ import net.crytec.libs.commons.utils.lang.Validate;
 
 /**
  * <p>A suite of utilities surrounding the use of the
- * {@link Calendar} and {@link Date} object.</p>
+ * {@link java.util.Calendar} and {@link java.util.Date} object.</p>
  *
  * <p>DateUtils contains a lot of common methods considering manipulations
  * of Dates or Calendars. Some methods require some extra explanation. The truncate, ceiling and round methods could be considered the Math.floor(), Math.ceil() or Math.round versions for dates This way date-fields will be ignored in bottom-up order.
@@ -347,7 +347,7 @@ public class DateUtils {
    * @return the parsed date
    * @throws IllegalArgumentException if the date string or pattern array is null
    * @throws ParseException           if none of the date patterns were suitable
-   * @see Calendar#isLenient()
+   * @see java.util.Calendar#isLenient()
    */
   private static Date parseDateWithLeniency(
       final String str, final Locale locale, final String[] parsePatterns, final boolean lenient) throws ParseException {
@@ -1696,8 +1696,8 @@ public class DateUtils {
     DateIterator(final Calendar startFinal, final Calendar endFinal) {
       super();
       this.endFinal = endFinal;
-      spot = startFinal;
-      spot.add(Calendar.DATE, -1);
+        spot = startFinal;
+        spot.add(Calendar.DATE, -1);
     }
 
     /**
@@ -1720,7 +1720,7 @@ public class DateUtils {
       if (spot.equals(endFinal)) {
         throw new NoSuchElementException();
       }
-      spot.add(Calendar.DATE, 1);
+        spot.add(Calendar.DATE, 1);
       return (Calendar) spot.clone();
     }
 
@@ -1728,7 +1728,7 @@ public class DateUtils {
      * Always throws UnsupportedOperationException.
      *
      * @throws UnsupportedOperationException Always thrown.
-     * @see Iterator#remove()
+     * @see java.util.Iterator#remove()
      */
     @Override
     public void remove() {

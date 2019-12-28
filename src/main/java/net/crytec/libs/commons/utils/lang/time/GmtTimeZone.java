@@ -44,8 +44,8 @@ class GmtTimeZone extends TimeZone {
       throw new IllegalArgumentException(minutes + " minutes out of range");
     }
     final int milliseconds = (minutes + (hours * MINUTES_PER_HOUR)) * MILLISECONDS_PER_MINUTE;
-    offset = negate ? -milliseconds : milliseconds;
-    zoneId = twoDigits(
+      offset = negate ? -milliseconds : milliseconds;
+      zoneId = twoDigits(
         twoDigits(new StringBuilder(9).append("GMT").append(negate ? '-' : '+'), hours)
             .append(':'), minutes).toString();
 
