@@ -24,6 +24,6 @@ public class CommonsAPI {
 
   public void setHostPrefix(final String prefix) {
     hostPrefix = prefix + ChatColor.RESET;
-    hostPrefix = StringUtils.chop(hostPrefix) + ChatColor.RESET;
+    hostPrefix = StringUtils.strip(hostPrefix) + ChatColor.RESET;
   }
 }
