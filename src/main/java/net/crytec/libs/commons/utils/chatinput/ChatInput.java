@@ -21,7 +21,7 @@ public class ChatInput {
     factory.withFirstPrompt(new PlayerResponsePrompt(this, text));
     factory.withLocalEcho(false);
     if (withPluginPrefix) {
-      factory.withPrefix(conversationContext -> CommonsAPI.getHost().getName());
+      factory.withPrefix(conversationContext -> CommonsAPI.getHostPrefix());
     }
     player.beginConversation(factory.buildConversation(player));
   }
