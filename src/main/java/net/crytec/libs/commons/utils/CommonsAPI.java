@@ -1,5 +1,6 @@
 package net.crytec.libs.commons.utils;
 
+import net.crytec.libs.commons.utils.chat.ChatHandler;
 import net.crytec.libs.commons.utils.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -12,6 +13,7 @@ public class CommonsAPI {
   public CommonsAPI(final JavaPlugin host) {
     CommonsAPI.host = host;
     hostPrefix = "[" + host.getName() + "] " + ChatColor.RESET;
+    new ChatHandler(host);
   }
 
   public static JavaPlugin getHost() {
