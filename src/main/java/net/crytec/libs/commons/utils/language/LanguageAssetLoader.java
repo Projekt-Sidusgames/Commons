@@ -19,7 +19,7 @@ import java.util.Map;
 
 public class LanguageAssetLoader {
 
-  private static final String ASSET_URL = "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.14.4/assets/minecraft/lang/";
+  private static final String ASSET_URL = "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.16.1/assets/minecraft/lang/";
   private final LanguageAPI api;
 
   private final HashMap<String, String> language;
