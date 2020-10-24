@@ -15,8 +15,8 @@
 
   <repositories>
     <repository>
-      <id>spigot</id>
-      <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+      <id>avarion-dev</id>
+      <url>http://168.119.168.65:8081/repository/maven-releases/</url>
     </repository>
   </repositories>
 
@@ -33,9 +33,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.spigotmc</groupId>
-      <artifactId>spigot-api</artifactId>
-      <version>1.16.1-R0.1-SNAPSHOT</version>
+      <groupId>com.destroystokyo.paper</groupId>
+      <artifactId>papercraft</artifactId>
+      <version>1.16.3</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -83,8 +83,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.0</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>15</source>
+          <target>15</target>
           <compilerArgs>
             <arg>-parameters</arg>
           </compilerArgs>
