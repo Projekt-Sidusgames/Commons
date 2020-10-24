@@ -23,11 +23,11 @@
   <distributionManagement>
     <snapshotRepository>
       <id>nexus-snapshots</id>
-      <url>http://repo.avarioncraft.de/repository/maven-snapshots/</url>
+      <url>http://168.119.168.65:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
     <repository>
       <id>nexus-releases</id>
-      <url>http://repo.avarioncraft.de/repository/maven-releases/</url>
+      <url>http://168.119.168.65:8081/repository/maven-releases/</url>
     </repository>
   </distributionManagement>
 
@@ -74,7 +74,7 @@
         </executions>
         <configuration>
           <serverId>nexus-releases</serverId>
-          <nexusUrl>http://repo.avarioncraft.de/</nexusUrl>
+          <nexusUrl>http://168.119.168.65:8081/</nexusUrl>
           <skipStaging>true</skipStaging>
         </configuration>
       </plugin>
