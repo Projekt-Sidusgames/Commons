@@ -27,7 +27,6 @@ import java.util.stream.StreamSupport;
  * @param <T>
  */
 public final class RandomSelector<T> {
-
   /**
    * Creates a new random selector based on a uniform distribution.
    *
