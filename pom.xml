@@ -15,28 +15,16 @@
 
   <repositories>
     <repository>
-      <id>avarion-dev</id>
-      <url>http://168.119.168.65:8081/repository/maven-releases/</url>
+      <id>sidus-repo</id>
+      <url>http://repo.sidusgames.eu/repository/maven-releases/</url>
     </repository>
   </repositories>
-
-  <distributionManagement>
-    <snapshotRepository>
-      <id>avarion-dev</id>
-      <url>http://168.119.168.65:8081/repository/maven-snapshots/</url>
-    </snapshotRepository>
-    <repository>
-      <id>avarion-dev</id>
-      <url>http://168.119.168.65:8081/repository/maven-releases/</url>
-    </repository>
-  </distributionManagement>
 
   <dependencies>
     <dependency>
       <groupId>com.destroystokyo.paper</groupId>
-      <artifactId>papercraft</artifactId>
+      <artifactId>paper-mc</artifactId>
       <version>1.16.4</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.jetbrains</groupId>
@@ -58,31 +46,12 @@
       </plugin>
 
       <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.8</version>
-        <executions>
-          <execution>
-            <id>default-deploy</id>
-            <phase>deploy</phase>
-            <goals>
-              <goal>deploy</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <serverId>nexus-releases</serverId>
-          <nexusUrl>http://168.119.168.65:8081/</nexusUrl>
-          <skipStaging>true</skipStaging>
-        </configuration>
-      </plugin>
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.0</version>
         <configuration>
-          <source>15</source>
-          <target>15</target>
+          <source>11</source>
+          <target>11</target>
           <compilerArgs>
             <arg>-parameters</arg>
           </compilerArgs>
