@@ -13,9 +13,16 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
+  <distributionManagement>
+    <snapshotRepository>
+      <id>sidus-snapshots</id>
+      <url>http://repo.sidusgames.eu/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
   <repositories>
     <repository>
-      <id>sidus-repo</id>
+      <id>sidus-releases</id>
       <url>http://repo.sidusgames.eu/repository/maven-releases/</url>
     </repository>
   </repositories>
@@ -55,6 +62,26 @@
           <compilerArgs>
             <arg>-parameters</arg>
           </compilerArgs>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.5.1</version>
+        <executions>
+          <execution>
+            <id>default-deploy</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>deploy</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <serverId>sidus-nexus</serverId>
+          <nexusUrl>http://repo.sidusgames.eu</nexusUrl>
+          <skipStaging>true</skipStaging>
         </configuration>
       </plugin>
     </plugins>
