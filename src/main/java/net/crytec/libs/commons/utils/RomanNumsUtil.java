@@ -26,18 +26,6 @@ public class RomanNumsUtil {
     romanNums.put(500, "D");
     romanNums.put(900, "CM");
     romanNums.put(1000, "M");
-    romanNums.put(4000, "MVÌ…");
-    romanNums.put(5000, "VÌ…");
-    romanNums.put(9000, "MXÌ…");
-    romanNums.put(10000, "XÌ…");
-    romanNums.put(40000, "XÌ…LÌ…");
-    romanNums.put(50000, "LÌ…");
-    romanNums.put(90000, "XÌ…CÌ…");
-    romanNums.put(100000, "CÌ…");
-    romanNums.put(400000, "CÌ…DÌ…");
-    romanNums.put(500000, "DÌ…");
-    romanNums.put(900000, "CÌ…MÌ…");
-    romanNums.put(1000000, "MÌ…");
     reversed = romanNums.descendingMap();
   }
 
